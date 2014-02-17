@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Gestion des marins</title>
+</head>
+<body>
+<h3>Création de marin</h3>
+
+	<h:form>
+
+	<table cellspacing="3" cellpadding="2" border="0">
+	<tr>
+		<td>
+			<h:outputLabel for="firstName" value="Prénom"/>
+		</td>
+		<td>
+			<h:inputText   id="firstName" value="#{marinControler.marin.prenom}"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h:outputLabel for="lastName" value="Nom"/>
+		</td>
+		<td>
+			<h:inputText   id="lastName" value="#{marinControler.marin.nom}"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h:outputLabel for="age" value="Age"/>
+		</td>
+		<td>
+			<h:inputText   id="age" value="#{marinControler.marin.age}"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h:commandButton value="créer" action="#{marinControler.create()}"/>
+		</td>
+	</tr>
+	
+	</table>
+	
+	</h:form>
+
+</body>
+</html>
