@@ -3,8 +3,10 @@ package org.paumard.controler;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.paumard.ejb.MarinEJB;
 import org.paumard.model.Marin;
 
 @SuppressWarnings("serial")
@@ -12,10 +14,14 @@ import org.paumard.model.Marin;
 @SessionScoped
 public class MarinControler implements Serializable {
 	
+	@Inject
+	private transient MarinEJB marinEJB ;
+	
 	private Marin marin = new Marin() ;
 
 	public void create() {
-		System.out.println(marin) ;
+		Long id = marinEJB.createMarin(marin) ;
+		System.out.println("Marin persisté : " + id) ;
 	}
 	
 	public Marin getMarin() {
